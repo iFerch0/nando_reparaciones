@@ -1,19 +1,22 @@
 <?php
 
-try {
-    $username = 'root';
-    $password = '';
-    $servername = 'localhost';
-    $databasename = 'nando_reparaciones';
+class Conexion {
+    private $host = "localhost";
+    private $usuario = "root";
+    private $contrasena = "";
+    private $baseDeDatos = "nando_reparaciones";
+    private $conexion;
 
-    $conn = mysqli_connect($servername, $username, $password, $databasename);
+    public function __construct() {
+        $this->conexion = new mysqli($this->host, $this->usuario, $this->contrasena, $this->baseDeDatos);
 
-    if ($conn === false) {
-        throw new Exception("Conexión fallida: " . mysqli_connect_error());
-    }else{
-        echo "Conexión exitosa";
+        if ($this->conexion->connect_error) {
+            die("Error de conexión: " . $this->conexion->connect_error);
+        }
     }
-} catch (Exception $e) {
-    die("Error: " . $e->getMessage());
+
+    public function obtenerConexion() {
+        return $this->conexion;
+    }
 }
 ?>
