@@ -10,7 +10,7 @@
     <!-- Enlaces a otras partes de tu sitio web -->
     <ul>
         <li><a href="index.php?action=crear_usuario">Crear Usuario</a></li>
-        <li><a href="index.php?action=ver_usuario&user_id=1">Ver Usuario 1</a></li>
+        <li><a href="index.php?action=registrar_persona">Registrar persona</a></li>
         <!-- Otros enlaces y acciones -->
     </ul>
 </body>

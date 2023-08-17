@@ -15,6 +15,10 @@ class UserController {
     public function getUser($userId){
         return $this->userModel->getUserById($userId);
     }
+
+    public function showCreateUserForm() {
+        include 'views/user/create.php';
+    }
 }
 
 ?>

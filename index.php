@@ -22,7 +22,6 @@ $action = isset($_GET['action']) ? $_GET['action'] : 'inicio';
 // Enrutamiento
 switch ($action) {
     case 'crear_usuario':
-        // Mostrar el formulario para crear un usuario
         include 'views/user/create.php';
         break;
     case 'guardar_usuario':
@@ -39,7 +38,7 @@ switch ($action) {
         $user = $userController->getUser($userId);
         include 'views/user/view.php';
         break;
-    // Otros casos y rutas...
+    
     default:
         // Página de inicio o manejo de error 404
         include 'views/home.php';
