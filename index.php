@@ -1,47 +1,31 @@
 <?php
-// index.php
+require_once(__DIR__ . "/db/db.php");
+require_once(__DIR__ . "/controllers/personas_controller.php");
 
-// Cargar archivos de configuración
-require_once 'config/conexion.php';
+$controller = new personas_controller();
 
-// Cargar clases de modelos y controladores
-require_once 'models/UserModel.php';
-require_once 'controllers/UserController.php';
-
-// Crear una instancia de la conexión a la base de datos
-$conexion = new Conexion();
-$db = $conexion->obtenerConexion();
-
-// Crear instancias de los modelos y controladores
-$userModel = new UserModel($db);
-$userController = new UserController($userModel);
-
-// Determinar la acción solicitada
-$action = isset($_GET['action']) ? $_GET['action'] : 'inicio';
-
-// Enrutamiento
-switch ($action) {
-    case 'crear_usuario':
-        include 'views/user/create.php';
-        break;
-    case 'guardar_usuario':
-        // Procesar el formulario para guardar un usuario
-        $username = $_POST['username'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-        $userController->createUser($username, $email, $password);
-        // Redireccionar a una página de éxito o mostrar un mensaje
-        break;
-    case 'ver_usuario':
-        // Ver detalles de un usuario
-        $userId = $_GET['user_id'];
-        $user = $userController->getUser($userId);
-        include 'views/user/view.php';
-        break;
-    
-    default:
-        // Página de inicio o manejo de error 404
-        include 'views/home.php';
-        break;
+if(isset($_POST['guardar_persona'])){
+    $controller->guardar();
 }
+
+$controller->mostrarLista();
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>GUARDAR PERSONA</h1>
+    <form method="post" action="">
+        <label>Nombres</label>
+        <input type="text" name="nombre" required><br>
+        <label>Identificacion: </label>
+        <input type="text" name="identificacion" required><br>
+        <button type="submit" name="guardar_persona"> GUARDAR</button>
+    </form>
+</body>
+</html>
