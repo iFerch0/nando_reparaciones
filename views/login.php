@@ -1,7 +1,11 @@
-<?php require_once 'partials/header.php'; ?>
+<?php 
+session_start();
+require_once 'partials/header.php';
+ ?>
+
 
 <h1>Iniciar Sesion</h1>
-<form action="index.php" method="post">
+<form action="../index.php" method="post">
     <label for="username">Usuario:</label>
     <input type="text" name="username" required>
     <label for="password">Contrasena:</label>
