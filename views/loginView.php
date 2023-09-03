@@ -23,6 +23,9 @@
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" name="password" required>
                 </div>
+                <div class="form-group">
+    <div class="text-danger" id="error-message">
+    <?php if (isset($error_message)) echo $error_message; ?>    </div> <!--Comentario por si hay error de credenciales -->
                 <div class="form-group text-center">
                     <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
                 </div>

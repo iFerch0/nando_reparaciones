@@ -15,7 +15,9 @@ if ($user && password_verify($password, $user['password'])) {
     header('Location: ../home.php');
     exit();
 }else{
-    echo "Credenciales incorrectas. <a href='../index.php'>Volver a intentarlo</a>";
+   // $error_message = "Credenciales incorrectas. Inténtalo de nuevo.";
+    header('Location: ../index.php');
+
 }
 }
 ?>
