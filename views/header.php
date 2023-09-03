@@ -2,6 +2,7 @@
 <html>
 <head>
     <title>REPARACION DE COMPUTADORAS</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
 </head>
 <body>
@@ -43,6 +44,20 @@
             </li>
         </ul>
     </div>
+    <!-- ... (código anterior) ... -->
+
+<div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+        <!-- Opciones del menú principal aquí -->
+    </ul>
+    <ul class="navbar-nav ml-auto"> <!-- Coloca elementos a la derecha -->
+        <li class="nav-item">
+            <a class="nav-link" href="../logout.php">Cerrar Sesión</a>
+        </li>
+    </ul>
+</div>
+</nav>
+
 </nav>
 
     </header>
