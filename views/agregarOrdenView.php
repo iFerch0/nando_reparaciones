@@ -1,14 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include 'header.php'; ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agregar Orden de Reparación</title>
-    <!-- Incluye aquí tus enlaces a Bootstrap y CSS personalizado si es necesario -->
-</head>
-
-<body>
     <div class="container mt-5">
         <h2 class="text-center">Agregar Orden de Reparación</h2>
         <form action="procesar_orden.php" method="post">
@@ -110,6 +101,4 @@
             </div>
         </form>
     </div>
-</body>
-
-</html>
+    <?php include 'footer.php'; ?>

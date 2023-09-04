@@ -4,6 +4,8 @@
     <title>REPARACION DE COMPUTADORAS</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="../scripts/scripts.js"></script>
+
 </head>
 <body>
     <header>
