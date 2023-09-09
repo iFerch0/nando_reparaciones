@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($personaModel->guardarPersona($tipo_identificacion, $identificacion, $nombres, $apellidos, $direccion, $telefono)) {
         echo "La persona se ha registrado exitosamente.";
-        header('Location: ../home.php');
+        header('Location: ../views/Personas/personaView.php');
     } else {
         echo "Hubo un error al registrar la persona.";
     }

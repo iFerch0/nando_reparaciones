@@ -1,9 +1,10 @@
-<footer>
-    <p>&copy; <?php echo date("Y"); ?> Fernando Rhenals</p>
+<footer class="bg-light">
+    <div class="container">
+        <hr>
+        <p class="text-center">&copy; <?php echo date("Y"); ?> Fernando Rhenals</p>
+    </div>
 </footer>
-<script src="../../scripts/scripts.js"></script>
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
