@@ -3,7 +3,7 @@ include '../config/db.php';
 
 $identificacion = $_POST['identificacion'];
 
-$query = "SELECT * FROM personas WHERE identificacion LIKE '%$identificacion%'";
+$query = "SELECT * FROM personas WHERE identificacion LIKE '%$identificacion%' ORDER BY id DESC";
 $result = mysqli_query($conn, $query);
 
 while ($row = mysqli_fetch_assoc($result)) {
