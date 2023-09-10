@@ -36,7 +36,7 @@
             echo "<td>".$row['apellidos']."</td>";
             echo "<td>".$row['direccion']."</td>";
             echo "<td>".$row['telefono']."</td>";
-            echo "<td><a href='editar_persona.php?id=".$row['id']."' class='btn btn-primary'>Editar</a></td>";
+            echo "<td><a href='" . BASE_URL . "controllers/editarPersonaController.php?id=" . $row['id'] . "' class='btn btn-primary'>Editar</a></td>";
             echo "<td><a href='eliminar_persona.php?id=".$row['id']."' class='btn btn-danger'>Eliminar</a></td>";
             echo "</tr>";
         }
