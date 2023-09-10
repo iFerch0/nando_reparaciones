@@ -28,6 +28,11 @@ include '../config/db.php';
                              WHERE id = $id";
             return mysqli_query($this->conn, $query);
         }
+
+        public function eliminarPersona($id) {
+            $query = "DELETE FROM personas WHERE id = $id";
+            return mysqli_query($this->conn, $query);
+        }
     }
 
     
