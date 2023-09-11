@@ -40,7 +40,7 @@ require_once(__DIR__ . '/../config/config.php');
                             <div class="dropdown-menu" aria-labelledby="verDropdown">
                                 <a class="dropdown-item" href="#">Ver ordenes</a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Personas/personaView.php">Ver personas</a>
-                                <a class="dropdown-item" href="#">Ver equipos</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Equipos/equiposView.php">Ver equipos</a>
                             </div>
                         </li>
                         <li class="nav-item">

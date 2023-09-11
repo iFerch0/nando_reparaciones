@@ -4,7 +4,7 @@ include '../config/db.php';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tipo_identificacion = $_POST['tipo_identificacion'];
     $identificacion = $_POST['identificacion'];
-    $nombres = $_POST['nombre'];
+    $nombres = $_POST['nombres'];
     $apellidos = $_POST['apellidos'];
     $telefono = $_POST['telefono'];
     $direccion = $_POST['direccion'];

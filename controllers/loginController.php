@@ -5,20 +5,22 @@ require_once '../models/UserModel.php';
 require_once '../config/config.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-$username = $_POST['username'];
-$password = $_POST['password'];
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-$userModel = new UserModel();
-$user = $userModel->getUserByUsername($username);
+    // Crear una instancia de UserModel pasando la conexión a la base de datos
+    $userModel = new UserModel($conn);
 
-if ($user && password_verify($password, $user['password'])) {
-    $_SESSION['user_id'] = $user['id'];
-    header('Location: ../home.php');
-    exit();
-}else{
-   // $error_message = "Credenciales incorrectas. Inténtalo de nuevo.";
-    header('Location: ../index.php');
+    // Obtener el usuario por nombre de usuario
+    $user = $userModel->getUserByUsername($username);
 
-}
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        header('Location: ../home.php');
+        exit();
+    } else {
+        header('Location: ../index.php?error=1');
+        exit();
+    }
 }
 ?>
