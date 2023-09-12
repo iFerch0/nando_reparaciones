@@ -7,7 +7,13 @@
         <h4 class="mt-4">Datos del Cliente</h4>
         <div class="row">
             <div class="col-md-6">
-                <div class="mb-3">
+            <div class="mb-3">
+                    <label for="numero_identificacion" class="form-label">Número de Identificación:</label>
+                    <input type="text" class="form-control" name="numero_identificacion" required>
+                    <button type="button" id="loadDataButton">Cargar Datos</button><br>
+
+                </div>    
+            <div class="mb-3">
                     <label for="tipo_identificacion" class="form-label">Tipo de Identificación:</label>
                     <select class="form-select" name="tipo_identificacion" required>
                         <option value="">Selecciona:</option>
@@ -20,10 +26,7 @@
                         ?>
                     </select>
                 </div>
-                <div class="mb-3">
-                    <label for="numero_identificacion" class="form-label">Número de Identificación:</label>
-                    <input type="text" class="form-control" name="numero_identificacion" required>
-                </div>
+                
                 <div class="mb-3">
                     <label for="nombres" class="form-label">Nombres:</label>
                     <input type="text" class="form-control" name="nombres" required>
