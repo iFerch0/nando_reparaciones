@@ -23,5 +23,4 @@ if (array_key_exists($route, $routes)) {
     include 'views/errorView.php';
 }
 
-// ... (código posterior)
 ?>
