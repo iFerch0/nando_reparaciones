@@ -4,8 +4,7 @@ function cargarDatosUsuario() {
     var id_cliente = document.getElementById('id_cliente').value;
     var nameInput = document.getElementById('nombres');
     var lastNameInput = document.getElementById('apellidos');
-    var telefonoInput = document.getElementById('telefono'); // Añadir un elemento HTML para mostrar el teléfono
-
+    var telefonoInput = document.getElementById('telefono');
 
     var xhr = new XMLHttpRequest();
     xhr.open('GET', BASE_URL + '/scripts/get_user_data.php?id=' + encodeURIComponent(id_cliente), true);
@@ -15,13 +14,12 @@ function cargarDatosUsuario() {
             if (userData.error !== "NULL") {
                 nameInput.value = userData.name;
                 lastNameInput.value = userData.lastName;
-                telefonoInput.value = userData.telefono; // Asignar el valor del teléfono al elemento HTML
+                telefonoInput.value = userData.telefono;
             } else {
                 var confirmation = confirm("No se encontró usuario con este ID. ¿Deseas registrar?");
-    
-    if (confirmation) {
-        window.location.href = BASE_URL + '/views/Personas/agregarPersonaView.php';
-    }
+                if (confirmation) {
+                    window.location.href = BASE_URL + '/views/Personas/agregarPersonaView.php';
+                }
             }
         }
     };
@@ -53,5 +51,33 @@ document.addEventListener('DOMContentLoaded', function () {
     var btnBuscar = document.getElementById('btnBuscar');
     if (btnBuscar) {
         btnBuscar.addEventListener('click', buscarPersonas);
+    }
+});
+
+function verificarExistenciaPersona() {
+    var id_cliente = document.getElementById('id_cliente').value;
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', BASE_URL + '/scripts/get_user_data.php?id=' + encodeURIComponent(id_cliente), true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            var userData = JSON.parse(xhr.responseText);
+            if (userData.error !== "NULL") {
+                alert(userData.name + ' ' + userData.lastName);
+            } else {
+                var confirmation = confirm("No se encontró usuario con este ID. ¿Deseas registrar?");
+                if (confirmation) {
+                    window.location.href = BASE_URL + '/views/Personas/agregarPersonaView.php';
+                }
+            }
+        }
+    };
+    xhr.send();
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var loadDataButton = document.getElementById('verificarPersona');
+    if (loadDataButton) {
+        loadDataButton.addEventListener('click', verificarExistenciaPersona);
     }
 });

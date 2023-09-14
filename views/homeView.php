@@ -7,7 +7,7 @@
             <div class="col-md-6">
                 <h1 class="display-4">¡Bienvenido a nuestra página web!</h1>
                 <p class="lead">Para continuar, click en Ver ordenes</p>
-                <a href="/views/agregarOrdenView.php" class="btn btn-primary btn-lg">Ver ordenes</a>
+                <a href="<?php echo BASE_URL ?>/views/agregarOrdenView.php" class="btn btn-primary btn-lg">Ver órdenes</a>
             </div>
             <div class="col-md-6">
                 <img src="../img/welcome-image.png" alt="Imagen de bienvenida" class="img-fluid rounded-circle">
