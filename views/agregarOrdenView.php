@@ -7,43 +7,33 @@
         <h4 class="mt-4">Datos del Cliente</h4>
         <div class="row">
             <div class="col-md-6">
-            <div class="mb-3">
-                    <label for="numero_identificacion" class="form-label">Número de Identificación:</label>
-                    <input type="text" class="form-control" name="numero_identificacion" required>
-                    <button type="button" id="loadDataButton">Cargar Datos</button><br>
-
-                </div>    
-            <div class="mb-3">
-                    <label for="tipo_identificacion" class="form-label">Tipo de Identificación:</label>
-                    <select class="form-select" name="tipo_identificacion" required>
-                        <option value="">Selecciona:</option>
-                        <?php
-                        require_once("../config/db.php");
-                        $query = $conn->query("SELECT * FROM tipo_identificacion");
-                        while ($valores = mysqli_fetch_array($query)) {
-                            echo '<option value="' . $valores['id'] . '">' . $valores['descripcion'] . '</option>';
-                        }
-                        ?>
-                    </select>
-                </div>
-                
                 <div class="mb-3">
-                    <label for="nombres" class="form-label">Nombres:</label>
-                    <input type="text" class="form-control" name="nombres" required>
+                    <label for="id_cliente" class="form-label">ID de Cliente</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control" name="id_cliente" id="id_cliente" required>
+                        <span class="input-group-btn">
+                            <a id="loadDataButton" class="btn btn-primary" href="javascript:void(0);" onclick="">Cargar Datos</a>
+                            <a href="<?php echo BASE_URL ?>/views/Personas/agregarPersonaView.php" class="btn btn-primary">Agregar Cliente</a>
+                        </span>
+                    </div>
                 </div>
                 <div class="mb-3">
-                    <label for="apellidos" class="form-label">Apellidos:</label>
-                    <input type="text" class="form-control" name="apellidos" required>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="nombres" class="form-label">Nombres:</label>
+                            <input type="text" class="form-control" name="nombres" id="nombres" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="apellidos" class="form-label">Apellidos:</label>
+                            <input type="text" class="form-control" name="apellidos" id="apellidos" required>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="mb-3">
-                    <label for="direccion" class="form-label">Dirección:</label>
-                    <input type="text" class="form-control" name="direccion" required>
-                </div>
-                <div class="mb-3">
                     <label for="telefono" class="form-label">Número de Teléfono:</label>
-                    <input type="tel" class="form-control" name="telefono" required>
+                    <input type="tel" class="form-control" name="telefono" id="telefono" required>
                 </div>
             </div>
         </div>
@@ -57,6 +47,7 @@
                     <select class="form-select" name="tipo_equipo" required>
                         <option value="">Selecciona:</option>
                         <?php
+                        require_once '../config/db.php';
                         $query = $conn->query("SELECT * FROM tipo_equipo");
                         while ($valores = mysqli_fetch_array($query)) {
                             echo '<option value="' . $valores['id'] . '">' . $valores['descripcion'] . '</option>';
@@ -82,13 +73,12 @@
                     <label for="accesorios" class="form-label">Accesorios:</label>
                     <textarea class="form-control" name="accesorios" rows="3"></textarea>
                 </div>
+                <div class="mb-3">
+                    <label for="accesorios" class="form-label">Problema reportado:</label>
+                    <textarea class="form-control" name="problema_reportado" rows="3"></textarea>
+                </div>
             </div>
         </div>
-
-        <!-- Más campos de Equipo de Computo -->
-        <!-- ... -->
-
-        <!-- Nombre del Técnico -->
         <div class="mb-3">
             <label for="tecnico" class="form-label">Nombre del Técnico:</label>
             <input type="text" class="form-control" name="tecnico" required>
