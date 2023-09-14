@@ -42,5 +42,22 @@ class EquipoModel {
         $query = "DELETE FROM equipos WHERE id = $id";
         return mysqli_query($this->conn, $query);
     }
+
+    public function guardarEquipo($tipo_equipo, $marca, $modelo, $serial, $fecha_compra, $persona_id){
+        try{
+            $sql = "INSERT INTO equipos (tipo_equipo, marca, modelo, serial, fecha_compra, persona_id) VALUES (?, ?, ?, ?, ?, ?)";
+            $stmt = $this->conn->prepare($sql);
+            $stmt->bind_param("ssssss", $tipo_equipo, $marca, $modelo, $serial, $fecha_compra, $persona_id);
+
+            if($stmt->execute()){
+                $stmt->close();
+                return true;
+            }else{
+                return false;
+            } 
+            } catch(PDOException $e){
+                return false;
+        }
+    }
 }
 ?>

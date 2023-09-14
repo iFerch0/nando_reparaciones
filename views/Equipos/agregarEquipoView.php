@@ -8,10 +8,10 @@
                     <h2 class="text-center">Registrar Equipo</h2>
                 </div>
                 <div class="card-body">
-                    <form action="" method="POST">
+                <form action="<?php echo BASE_URL; ?>/controllers/agregarEquipoController.php" method="POST">
                         <div class="form-group">
                             <label for="tipo_equipo" class="form-label">Tipo de Equipo:</label>
-                            <select class="form-select" name="tipo_equipo" required>
+                            <select class="form-select" name="tipo_equipo" id="tipo_equipo" required>
                                 <option value="">Selecciona:</option>
                                 <?php
                                 require_once '../../config/db.php';
@@ -24,20 +24,20 @@
                         </div>
                         <div class="mb-3">
                             <label for="marca" class="form-label">Marca:</label>
-                            <input type="text" class="form-control" name="marca" required>
+                            <input type="text" class="form-control" name="marca" id="marca"required>
                         </div>
                         <div class="mb-3">
                             <label for="modelo" class="form-label">Modelo:</label>
-                            <input type="text" class="form-control" name="modelo" required>
+                            <input type="text" class="form-control" name="modelo" id="modelo" required>
                         </div>
                         <div class="mb-3">
                     <label for="serial" class="form-label">Serial:</label>
-                    <input type="text" class="form-control" name="serial" required>
+                    <input type="text" class="form-control" name="serial" id="serial" required>
 
                 </div>
                 <div class="mb-3">
                     <label for="fecha_compra" class="form-label">Fecha de Compra:</label>
-                    <input type="date" class="form-control" name="fecha_compra" required>
+                    <input type="date" class="form-control" name="fecha_compra" id="fecha_compra" required>
                 </div>
                 <div class="input-group">
                         <input type="text" class="form-control" name="id_cliente" id="id_cliente" required>
