@@ -81,3 +81,39 @@ document.addEventListener('DOMContentLoaded', function () {
         loadDataButton.addEventListener('click', verificarExistenciaPersona);
     }
 });
+
+function verificarEquipoSerial($serial) {
+    var tipo_equipo = document.getElementById('tipo_equipo');
+    var marca = document.getElementById('marca');
+    var modelo = document.getElementById('modelo');
+    var serial = document.getElementById('serial').value;
+    
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', BASE_URL + '/scripts/get_equipo_serial.php?serial=' + encodeURIComponent(serial), true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
+            var equipoSerial = JSON.parse(xhr.responseText);
+            if (equipoSerial.error!== "NULL") {
+                tipo_equipo.value = equipoSerial.tipo_equipo;
+                marca.value = equipoSerial.marca;
+                modelo.value = equipoSerial.modelo;
+                serial.value = equipoSerial.serial;
+                //alert(equipoSerial.tipo_equipo + ' ' + equipoSerial.serial + ' ' + equipoSerial.marca +'' + equipoSerial.modelo);
+            } else {
+                var confirmation = confirm("No se encontró equipo con este serial. ¿Deseas registrar?");
+                if (confirmation) {
+                    window.location.href = BASE_URL + '/views/Equipos/agregarEquipoView.php';
+                }
+            }
+        }
+    };
+    xhr.send();        
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var loadDataButton = document.getElementById('verificarSerial');
+    if (loadDataButton) {
+        loadDataButton.addEventListener('click', verificarEquipoSerial);
+    }
+});

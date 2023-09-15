@@ -29,7 +29,7 @@ require_once(__DIR__ . '/../config/config.php');
                                 Agregar
                             </a>
                             <div class="dropdown-menu" aria-labelledby="agregarDropdown">
-                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/agregarOrdenView.php">Agregar orden</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Reparacion/agregarOrdenView.php">Agregar orden</a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Personas/agregarPersonaView.php">Agregar Persona</a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Equipos/agregarEquipoView.php">Agregar Equipo</a>
                             </div>
