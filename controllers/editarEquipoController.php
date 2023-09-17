@@ -5,7 +5,6 @@ include '../models/EquipoModel.php';
 
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     $id = $_GET['id'];
-
     $model = new EquipoModel($conn);
     $equipo = $model->obtenerEquipoPorID($id);
 
@@ -35,7 +34,7 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     } else {
         echo "ID de equipo no válido";
     }
-}else{
+} else {
     echo "ID de equipo no válido";
 }
 ?>
