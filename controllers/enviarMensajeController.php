@@ -14,12 +14,14 @@
 
              $contactoModel = new ContactoModel($conn);
 
-             if($contactoModel->guardarMensaje($nombre, $email, $mensaje, $fecha)){
-                echo "Mensaje enviado correctamente";
-                header('Location: ' . BASE_URL . '/views/contactoView.php');
-             }else{
-                echo "No se pudo enviar el mensaje";
-             }
+             if ($contactoModel->guardarMensaje($nombre, $email, $mensaje, $fecha)) {
+               // Redirige con un parámetro GET
+               header('Location: ' . BASE_URL . '/views/contactoView.php?message=Mensaje+enviado+correctamente');
+           } else {
+               header('Location: ' . BASE_URL . '/views/contactoView.php?message=No+se+pudo+enviar+el+mensaje');
+           }
+           
+           
              }else{
                 echo "Acceso denegado";
              

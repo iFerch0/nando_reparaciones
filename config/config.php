@@ -1,5 +1,5 @@
 <?php
-define("BASE_URL", "http://localhost/nando_reparaciones/");
+define("BASE_URL", "https://e6df-191-108-141-15.ngrok-free.app/nando_reparaciones/");
 
 if (filter_var(BASE_URL, FILTER_VALIDATE_URL) === false) {
     die("La URL base no es válida.");

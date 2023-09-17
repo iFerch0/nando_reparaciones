@@ -1,4 +1,4 @@
-var BASE_URL = 'http://localhost/nando_reparaciones/';
+var BASE_URL = 'https://e6df-191-108-141-15.ngrok-free.app/nando_reparaciones/';
 
 function cargarDatosUsuario() {
     var id_cliente = document.getElementById('id_cliente').value;
