@@ -39,13 +39,13 @@ require_once(__DIR__ . '/../config/config.php');
                                 Ver
                             </a>
                             <div class="dropdown-menu" aria-labelledby="verDropdown">
-                                <a class="dropdown-item" href="#">Ver ordenes</a>
+                                <a class="dropdown-item" href="<?php echo BASE_URL; ?>controllers/listarReparacionController.php">Ver ordenes</a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Personas/personaView.php">Ver personas</a>
                                 <a class="dropdown-item" href="<?php echo BASE_URL; ?>views/Equipos/equiposView.php">Ver equipos</a>
                             </div>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="<?php echo BASE_URL; ?>views/contactoView.php">Contacto</a>
                         </li>
                     </ul>
                     <ul class="navbar-nav ms-auto"> <!-- Coloca elementos a la derecha -->
