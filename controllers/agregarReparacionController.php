@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $reparacionModel = new ReparacionModel($conn);
 
     if ($reparacionModel->procesarOrden($id_cliente, $id_equipo, $accesorios, $problema_reportado, $fecha_ingreso, $fecha_entrega, $id_tecnico)) {
-        header('Location: ' . BASE_URL . '/views/Reparacion/reparacionView.php');
+        header('Location: ' . BASE_URL . 'controllers/listarReparacionController.php');
     } else {
         echo "No se pudo procesar la orden";
     }
