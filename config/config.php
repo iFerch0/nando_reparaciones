@@ -1,5 +1,5 @@
 <?php
-define("BASE_URL", "https://nandoreparaciones-575708d2f7d2.herokuapp.com/");
+define("BASE_URL", "https://nandoreparaciones-18ed81b1a8d6.herokuapp.com/");
 
 if (filter_var(BASE_URL, FILTER_VALIDATE_URL) === false) {
     die("La URL base no es válida.");

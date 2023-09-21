@@ -1,4 +1,4 @@
-var BASE_URL = 'https://nandoreparaciones-575708d2f7d2.herokuapp.com/';
+var BASE_URL = 'https://nandoreparaciones-18ed81b1a8d6.herokuapp.com/';
 
 function cargarDatosUsuario() {
     var id_cliente = document.getElementById('id_cliente').value;
