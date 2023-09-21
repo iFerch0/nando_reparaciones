@@ -1,4 +1,4 @@
-var BASE_URL = 'https://e6df-191-108-141-15.ngrok-free.app/nando_reparaciones/';
+var BASE_URL = 'https://nandoreparaciones-575708d2f7d2.herokuapp.com/';
 
 function cargarDatosUsuario() {
     var id_cliente = document.getElementById('id_cliente').value;
